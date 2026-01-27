@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модели OSI и TCP/IP - Уровни и протоколы</title>
+</head>
+<style>
+    p{background: yellowgreen; padding-left: 15px; margin-left: 50px; margin-right: 50px;}
+    h1{text-align: center;background: violet;}
+    h2{text-align: center;background:yellow ;}
+    h3{text-align: center;background:red;}
+    h4{text-align: center;background: mediumspringgreen;}
+    body{background:burlywood;}
+
+</style>
+<body>
+    <header>
+        <h1>Модели OSI и TCP/IP - Уровни и протоколы</h1>
+    </header>
+    
+    <main>
+        <article>
+            <section id="osi-model">
+                <h2>1. Модель OSI (The Open Systems Interconnection model)</h2>
+                <p>
+                    Это <strong>теоретическая, эталонная модель</strong>, состоящая из 7 уровней. Она
+                    создана для стандартизации и понимания того, как данные передаются по
+                    сети от приложения к приложению.
+                </p>
+                <p>
+                    <strong>Принцип:</strong> Каждый уровень выполняет свою задачу, передает данные
+                    следующему уровню, добавляя свою служебную информацию (<strong>заголовок</strong>).
+                </p>
+                <section id="osi-levels">
+                    <h3>Уровни модели OSI и их ключевые протоколы/функции:</h3>
+                    
+                    <article>
+                        <h4>Уровень 7. Прикладной (Application)</h4>
+                        <p><strong>Задача:</strong> Интерфейс для взаимодействия пользователя или приложения с сетью.</p>
+                         <p><strong>Протоколы и примеры:</strong> HTTP, HTTPS, FTP, SMTP (почта), POP3/IMAP, DNS, SSH.</p>
+                        <p><strong>Пример:</strong> Ваш браузер формирует HTTP-запрос к сайту.</p>
+                    </article>
+                     <h4>Уровень 6. Представительский (Presentation)</h4>
+                        <p><strong>Задача:</strong> Преобразование данных в нужный формат: кодирование, шифрование, сжатие.</p>
+                        <p><strong>Протоколы и примеры:</strong> SSL/TLS (шифрование), JPEG, MPEG, ASCII.</p>
+                        <p><strong>Пример:</strong> Шифрование данных перед отправкой (HTTPS) или перевод в GIF/PNG.</p>
+                    </article>
+                       <article>
+                        <h4>Уровень 5. Сеансовый (Session)</h4>
+                        <p><strong>Задача:</strong> Установление, управление и завершение сеанса связи между приложениями.</p>
+                        <p><strong>Протоколы и примеры:</strong> RPC, NetBIOS, SIP.</p>
+                        <p><strong>Пример:</strong> Поддержка сессии при видеоконференции или при удаленном доступе.</p>
+                    </article>
+                     <article>
+                        <h4>Уровень 4. Транспортный (Transport)</h4>
+                        <p><strong>Задача:</strong> Обеспечение надежной или ненадежной доставки данных между процессами на разных хостах. Контроль потока и ошибок.</p>
+                        <p><strong>Ключевые протоколы:</strong></p>
+                        <ul>
+                            <li><strong>TCP (Transmission Control Protocol)</strong> — надежный, с установлением соединения и подтверждением доставки.</li>
+                            <li><strong>UDP (User Datagram Protocol)</strong> — быстрый, ненадежный, без установления соединения.</li>
+                        </ul>
+                        <p><strong>Пример:</strong> Порты (80 для HTTP, 443 для HTTPS) — это понятие этого уровня. TCP "разбивает" большой файл на сегменты.</p>
+                    </article>
+                                       <article>
+                        <h4>Уровень 3. Сетевой (Network)</h4>
+                        <p><strong>Задача:</strong> Определение маршрута (маршрутизация) и логическая адресация в сетях.</p>
+                        <p><strong>Ключевые протоколы:</strong></p>
+                        <ul>
+                            <li><strong>IP (Internet Protocol)</strong> — отвечает за логическую адресацию (IP-адреса: IPv4, IPv6).</li>
+                            <li>ICMP, OSPF, BGP, RIP.</li>
+                        </ul>
+                        <p><strong>Пример:</strong> Маршрутизатор (роутер) работает на этом уровне, решая, куда отправить пакет по IP-адресу.</p>
+                    </article>
+                     <article>
+                        <h4>Уровень 2. Канальный (Data Link)</h4>
+                        <p><strong>Задача:</strong> Обеспечение связи между устройствами в одной локальной сети (ЛВС). Физическая адресация, обнаружение и исправление ошибок.</p>
+                        <p><strong>Подуровни:</strong></p>
+                        <ul>
+                            <li><strong>LLC (Logical Link Control)</strong> — взаимодействие с сетевым уровнем.</li>
+                            <li><strong>MAC (Media Access Control)</strong> — управление доступом к среде, физические адреса (MAC-адреса).</li>
+                        </ul>
+                        <p><strong>Протоколы и устройства:</strong> Ethernet, Wi-Fi (802.11), PPP, MAC-адреса, Коммутатор (switch).</p>
+                        <p><strong>Пример:</strong> Свитч пересылает кадр (frame) по MAC-адресу внутри одной сети.</p>
+                    </article>
+                     <article>
+                        <h4>Уровень 1. Физический (Physical)</h4>
+                        <p><strong>Задача:</strong> Передача необработанного битового потока по физической среде (медный кабель, оптоволокно, радиоволны).</p>
+                        <p><strong>Пример:</strong> Уровни электрических сигналов, напряжения, типы разъемов (RJ-45), стандарты кабелей (витая пара), хабы (концентраторы).</p>
+                    </article>
+                      </section>
+            </section>
+            
+            <section id="tcp-ip-model">
+                <h2>2. Модель TCP/IP (DoD Model)</h2>
+                <p>
+                    Это <strong>практическая, реализованная модель</strong>, на которой построен
+                    современный Интернет. Она состоит из 4 уровней и более проста.
+                </p>
+                
+                <section id="tcp-ip-levels">
+                    <h3>Уровни модели TCP/IP и их соответствие уровням OSI:</h3>
+                    
+                    <article>
+                        <h4>Уровень 4. Прикладной (Application)</h4>
+                        <p><strong>Объединяет уровни OSI:</strong> Прикладной (7), Представительский (6) и Сеансовый (5).</p>
+                        <p><strong>Задача:</strong> Все, что связано с приложениями и процессами.</p>
+                        <p><strong>Протоколы:</strong> HTTP, FTP, SMTP, DNS, SSH и т.д.</p>
+                    </article>
+                    <article>
+                        <h4>Уровень 3. Транспортный (Transport)</h4>
+                        <p><strong>Полностью соответствует</strong> транспортному уровню OSI (4).</p>
+                        <p><strong>Задача:</strong> Обеспечение связи "от процесса к процессу".</p>
+                        <p><strong>Протоколы:</strong> TCP и UDP.</p>
+                    </article>
+                    <article>
+                        <h4>Уровень 2. Сетевой (Internet)</h4>
+                        <p><strong>Соответствует</strong> сетевому уровню OSI (3).</p>
+                        <p><strong>Задача:</strong> Маршрутизация и адресация между сетями.</p>
+                        <p><strong>Ключевой протокол:</strong> IP (а также ICMP, ARP).</p>
+                    </article>
+                    
+                    <article>
+                        <h4>Уровень 1. Канальный (Network Access / Link)</h4>
+                        <p><strong>Объединяет уровни OSI:</strong> Канальный (2) и Физический (1).</p>
+                        <p><strong>Задача:</strong> Передача данных по конкретной физической среде в пределах одного сетевого сегмента.</p>
+                        <p><strong>Примеры:</strong> Ethernet, Wi-Fi, технологии DSL, MAC-адресация.</p>
+                    </article>
+                     </section>
+            </section>
+            
+            <section id="comparison-table">
+                <h2>Сравнительная таблица и как данные передаются</h2>
+                
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Модель OSI (7 уровней)</th>
+                            <th>Модель TCP/IP (4 уровня)</th>
+                            <th>Данные на каждом уровне (PDU*)</th>
+                            <th>Ключевые устройства</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>7. Прикладной</strong></td>
+                            <td rowspan="3"><strong>4. Прикладной</strong></td>
+                            <td rowspan="3"><strong>Данные (Data)</strong></td>
+                            <td rowspan="3">Шлюз (Gateway)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Представительский</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Сеансовый</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Транспортный</strong></td>
+                            <td><strong>3. Транспортный</strong></td>
+                            <td><strong>Сегменты (TCP) / Датаграммы (UDP)</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Сетевой</strong></td>
+                            <td><strong>2. Сетевой (Internet)</strong></td>
+                            <td><strong>Пакеты (Packets)</strong></td>
+                            <td>Маршрутизатор (Router)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Канальный</strong></td>
+                            <td rowspan="2"><strong>1. Канальный</strong></td>
+                            <td rowspan="2"><strong>Кадры (Frames)</strong></td>
+                            <td rowspan="2">Коммутатор (Switch), Мост (Bridge)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1. Физический</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Биты (Bits)</strong></td>
+                            <td>Концентратор (Hub), Повторитель (Repeater)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                  <p><small>*<strong>PDU (Protocol Data Unit)</strong> — единица передаваемых данных.</small></p>
+            </section>
+             <section id="encapsulation">
+                <h2>Процесс инкапсуляции данных (сверху вниз):</h2>
+                <ol>
+                    <li>Вы отправляете сообщение в мессенджере (<strong>Данные</strong>, Ур. 7-5 OSI / Ур.4 TCP/IP).</li>
+                    <li><strong>Транспортный уровень</strong> (TCP) разбивает их, добавляет заголовок с портами → образуется <strong>Сегмент</strong>.</li>
+                    <li><strong>Сетевой уровень</strong> (IP) добавляет свой заголовок с IP-адресами → образуется <strong>Пакет</strong>.</li>
+                    <li><strong>Канальный уровень</strong> (Ethernet) добавляет заголовок и "хвост" с MAC-адресами → образуется <strong>Кадр</strong>.</li>
+                    <li><strong>Физический уровень</strong> преобразует кадр в последовательность <strong>Битов</strong> (электрических/оптических сигналов) и отправляет в сеть.</li>
+                </ol>
+                <p>На принимающей стороне происходит обратный процесс — <strong>декапсуляция</strong> (снизу вверх): биты → кадр → пакет → сегмент → данные для приложения.</p>
+            </section>
+            <section id="summary">
+                <h2>Краткий итог:</h2>
+                <ul>
+                    <li><strong>Модель OSI</strong> — это <strong>теоретический стандарт</strong> ("как должно быть") из 7 уровней. Ее используют в основном для обучения и описания сетевых процессов.</li>
+                    <li><strong>Модель TCP/IP</strong> — это <strong>практическая реализация</strong> ("как есть на самом деле") из 4 уровней, лежащая в основе Интернета.</li>
+                    <li><strong>Соответствие:</strong> Уровни TCP/IP грубо "накладываются" на уровни OSI, как показано в таблице.</li>
+                    <li><strong>Запомните:</strong> <strong>IP</strong> работает на сетевом уровне (маршрутизация), а <strong>TCP/UDP</strong> — на транспортном (доставка между приложениями).</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>Документ: Модели OSI и TCP/IP. Уровни модели и протоколы.</p>
+        <p>Версия для веб-страницы без использования CSS</p>
+    </footer>
+
+
+
+
+                
+
+</body>
+</html>
